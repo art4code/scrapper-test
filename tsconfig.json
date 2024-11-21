@@ -24,7 +24,11 @@
     "strictNullChecks": true,
     "inlineSources": true,
     "noImplicitAny": true,
-    "sourceRoot": "/"
+    "forceConsistentCasingInFileNames": true,
+    "sourceRoot": "/",
+    "paths": {
+      "@src/*": ["src/*"]
+    }
   },
   "include": ["**/*.json", "**/*.ts", "**/*.js"],
   "exclude": ["node_modules/", "build/", "public", "dist/", ".cache/", ".tmp/"]

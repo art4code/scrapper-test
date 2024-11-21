@@ -25,7 +25,7 @@ module.exports = {
   ignorePatterns: ["*.js", "*.d.ts", "dist", ".eslintrc.js"],
   rules: {
     "prettier/prettier": ["error", { endOfLine: "auto" }],
-    "no-console": "off",
+    "no-console": ["error", { allow: ["warn", "error"] }],
     curly: "error",
     "brace-style": ["error", "1tbs", { allowSingleLine: false }],
     "no-constant-condition": ["error", { checkLoops: false }],
