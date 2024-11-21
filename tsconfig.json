@@ -1,21 +1,31 @@
 {
+  "ts-node": {
+    "files": true,
+    "require": ["tsconfig-paths/register"]
+  },
   "compilerOptions": {
-    "module": "commonjs",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "module": "CommonJS",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ESNext",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "moduleResolution": "node",
+    "strict": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "strictNullChecks": true,
+    "inlineSources": true,
+    "noImplicitAny": true,
+    "sourceRoot": "/"
+  },
+  "include": ["**/*.json", "**/*.ts", "**/*.js"],
+  "exclude": ["node_modules/", "build/", "public", "dist/", ".cache/", ".tmp/"]
 }
