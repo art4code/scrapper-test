@@ -2,6 +2,7 @@ import { Logger } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 
 import { AppModule } from "./app.module";
+import { ValidationPipeConfig } from "./configs/validation-pipe.config";
 import { LoggingInterceptor } from "./logger/interceptor.logger";
 import { SharedEnvService } from "./shared/shared-env.service";
 
@@ -24,6 +25,7 @@ async function bootstrap() {
   });
 
   app.useGlobalInterceptors(new LoggingInterceptor());
+  app.useGlobalPipes(ValidationPipeConfig);
 
   await app.listen(APP_LISTEN_PORT);
 
