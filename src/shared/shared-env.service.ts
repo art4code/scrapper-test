@@ -14,12 +14,22 @@ export class SharedEnvService {
 
     log.debug(`Environment variable: ${key} = ${value}`);
 
+    if (!Object.values(EnvEnum).includes(key as EnvEnum)) {
+      log.error(`Unknown environment variable: ${key}, please add it to the EnvEnum in envs.enum.ts`);
+    }
+
+    return value as Response;
+  }
+
+  getOrThrow<Response>(key: string): Response {
+    const value = this.get<Response>(key);
+
     if (!value) {
       log.error(`Undefined environment variable: ${key}`);
       throw new Error(`Undefined environment variable: ${key}`);
     }
 
-    return value as Response;
+    return value;
   }
 
   isEnvSetOrThrow() {
